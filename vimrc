@@ -9,9 +9,23 @@ set shiftwidth=4 tabstop=4
 let mapleader=","
 set hlsearch
 
-set colorcolumn=80
+" Platform Specific
+"-------------------
+let s:uname = substitute(system("uname -s"), '\n', '', '')
+
+if s:uname == "Darwin"
+  let g:tagbar_ctags_bin="$HOME/bin/ctags"
+endif
+
+" Cursor improvements
+"-------------------
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
 set cursorline
 
+" Alt swapfile output
+"-------------------
 set directory=~/.vim/swapfiles//
 
 " Highlight
@@ -19,12 +33,19 @@ set directory=~/.vim/swapfiles//
 let g:go_highlight_functions = 1  
 let g:go_highlight_methods = 1  
 let g:go_highlight_structs = 1  
+let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1  
 let g:go_highlight_build_constraints = 1
 
 " neocomplete - auto completion
 "---------------------
 let g:neocomplete#enable_at_startup = 1
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 set completeopt=menu
 
 " Pathogen - manage runtime path
@@ -44,12 +65,6 @@ colorscheme molokai
 
 " Go Mappings
 " ----------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -73,6 +88,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 au FileType go nmap <Leader>i :GoInfo<CR> 
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>re :GoRename<CR>
 au FileType go nmap <Leader>b :GoBuild<CR>
 au FileType go nmap <Leader>t :GoTest<CR>
 au FileType go nmap gd <Plug>(go-def-tab)
@@ -99,3 +115,35 @@ let g:ctrlp_custom_ignore = {
 " rust.vim
 "------------------
 "let g:rustfmt_autosave=1
+
+" tagbar
+"-----------------
+nmap <F8> :TagbarToggle<CR>
+" TagBar for Go
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }

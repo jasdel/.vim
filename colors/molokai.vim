@@ -33,8 +33,8 @@ hi Number          guifg=#AE81FF
 hi String          guifg=#E6DB74
 hi Conditional     guifg=#F92672               gui=bold
 hi Constant        guifg=#AE81FF               gui=bold
-hi Cursor          guifg=#000000 guibg=none 
-hi iCursor         guifg=#000000 guibg=none 
+hi Cursor          guifg=#000000 guibg=NONE
+hi iCursor         guifg=#000000 guibg=NONE
 hi Debug           guifg=#BCA3A3               gui=bold
 hi Define          guifg=#66D9EF
 hi Delimiter       guifg=#8F8F8F
@@ -60,7 +60,7 @@ hi Label           guifg=#E6DB74               gui=none
 hi Macro           guifg=#C4BE89               gui=italic
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
-hi MatchParen      guifg=#5FFFFF guibg=none    gui=bold
+hi MatchParen      guifg=#5FFFFF guibg=NONE gui=bold
 hi ModeMsg         guifg=#E6DB74
 hi MoreMsg         guifg=#E6DB74
 hi Operator        guifg=#F92672
@@ -112,7 +112,7 @@ hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none
 if s:molokai_original == 1
    hi Normal          guifg=#F8F8F2 guibg=#272822
    hi Comment         guifg=#75715E
-   hi CursorLine      guifg=none    guibg=none    gui=underline
+   hi CursorLine      guifg=NONE    guibg=NONE    gui=underline
    hi CursorLineNr    guifg=#FD971F               gui=none
    hi CursorColumn                  guibg=#3E3D32
    hi ColorColumn                   guibg=#3B3A32
@@ -122,7 +122,7 @@ if s:molokai_original == 1
 else
    hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
    hi Comment         guifg=#7E8E91
-   hi CursorLine      guifg=none    guibg=none    gui=underline
+   hi CursorLine      guifg=NONE    guibg=NONE    gui=underline
    hi CursorLineNr    guifg=#FD971F               gui=none
    hi CursorColumn                  guibg=#293739
    hi ColorColumn                   guibg=#232526
@@ -137,11 +137,11 @@ end
 if &t_Co > 255
    if s:molokai_original == 1
       hi Normal                   ctermbg=234
-      hi CursorLine   ctermfg=none ctermbg=none cterm=underline
+      hi CursorLine   ctermfg=NONE ctermbg=NONE cterm=underline
       hi CursorLineNr ctermfg=208               cterm=none
    else
       hi Normal       ctermfg=252 ctermbg=233
-      hi CursorLine   ctermfg=none ctermbg=none cterm=underline
+      hi CursorLine   ctermfg=NONE ctermbg=NONE cterm=underline
       hi CursorLineNr ctermfg=208               cterm=none
    endif
    hi Boolean         ctermfg=135
@@ -177,7 +177,7 @@ if &t_Co > 255
    hi Macro           ctermfg=193
    hi SpecialKey      ctermfg=81
 
-   hi MatchParen      ctermfg=087  ctermbg=none cterm=bold
+   hi MatchParen      ctermfg=087  ctermbg=NONE cterm=bold
    hi ModeMsg         ctermfg=229
    hi MoreMsg         ctermfg=229
    hi Operator        ctermfg=161
@@ -234,7 +234,7 @@ if &t_Co > 255
 
    if exists("g:rehash256") && g:rehash256 == 1
        hi Normal       ctermfg=252 ctermbg=235
-       hi CursorLine   ctermfg=none ctermbg=none cterm=underline
+       hi CursorLine   ctermfg=NONE ctermbg=NONE cterm=underline
        hi CursorLineNr ctermfg=208               cterm=none
 
        hi Boolean         ctermfg=141
