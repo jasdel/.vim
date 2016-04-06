@@ -8,6 +8,7 @@ set wrap linebreak
 set shiftwidth=4 tabstop=4
 let mapleader=","
 set hlsearch
+set mouse=a
 
 " Platform Specific
 "-------------------
@@ -30,21 +31,18 @@ set directory=~/.vim/swapfiles//
 
 " Highlight
 "--------------------
-let g:go_highlight_functions = 1  
-let g:go_highlight_methods = 1  
-let g:go_highlight_structs = 1  
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1  
-let g:go_highlight_build_constraints = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_build_constraints = 0
 
 " neocomplete - auto completion
 "---------------------
 let g:neocomplete#enable_at_startup = 1
-" Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-" Use smartcase.
 let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 set completeopt=menu
 
