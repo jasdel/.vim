@@ -10,10 +10,6 @@
   path = bundle/rust.vim
   url = https://github.com/rust-lang/rust.vim.git
 
-[submodule "tagbar"]
-  path = bundle/tagbar
-  url = https://github.com/majutsushi/tagbar.git
-
 [submodule "vim-compiler-go"]
   path = bundle/vim-compiler-go
   url = https://github.com/rjohnsondev/vim-compiler-go.git

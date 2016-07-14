@@ -14,16 +14,16 @@ set mouse=a
 "-------------------
 let s:uname = substitute(system("uname -s"), '\n', '', '')
 
-if s:uname == "Darwin"
-  let g:tagbar_ctags_bin="$HOME/bin/ctags"
-endif
+"if s:uname == "Darwin"
+"  let g:tagbar_ctags_bin="$HOME/bin/ctags"
+"endif
 
 " Cursor improvements
 "-------------------
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
-set cursorline
+"set cursorline
 
 " Alt swapfile output
 "-------------------
@@ -105,44 +105,37 @@ let g:ctrlp_custom_ignore = {
 "------------------
 "let g:rustfmt_autosave=1
 
-" tagbar
-"-----------------
-nmap <F8> :TagbarToggle<CR>
-" TagBar for Go
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
-
-" Python settings
-"------------------
-autocmd BufRead *.py set tabstop=4 shiftwidth=4 smarttab expandtab
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e
+" " tagbar
+" "-----------------
+" nmap <F8> :TagbarToggle<CR>
+" " TagBar for Go
+" let g:tagbar_type_go = {
+"     \ 'ctagstype' : 'go',
+"     \ 'kinds'     : [
+"         \ 'p:package',
+"         \ 'i:imports:1',
+"         \ 'c:constants',
+"         \ 'v:variables',
+"         \ 't:types',
+"         \ 'n:interfaces',
+"         \ 'w:fields',
+"         \ 'e:embedded',
+"         \ 'm:methods',
+"         \ 'r:constructor',
+"         \ 'f:functions'
+"     \ ],
+"     \ 'sro' : '.',
+"     \ 'kind2scope' : {
+"         \ 't' : 'ctype',
+"         \ 'n' : 'ntype'
+"     \ },
+"     \ 'scope2kind' : {
+"         \ 'ctype' : 't',
+"         \ 'ntype' : 'n'
+"     \ },
+"     \ 'ctagsbin'  : 'gotags',
+"     \ 'ctagsargs' : '-sort -silent'
+" \ }
 
 " Key bindings
 "------------------
