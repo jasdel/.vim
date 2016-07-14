@@ -82,15 +82,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 
-" Go related mappings
-au FileType go nmap <Leader>i :GoInfo<CR> 
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>re :GoRename<CR>
-au FileType go nmap <Leader>b :GoBuild<CR>
-au FileType go nmap <Leader>t :GoTest<CR>
-au FileType go nmap gd <Plug>(go-def-tab)
-
 " Vim-Go config
 "------------------
 let g:go_fmt_command = "goimports"
