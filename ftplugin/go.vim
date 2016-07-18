@@ -18,7 +18,8 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+:nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+:nmap <leader>gc :GoCoverageToggle<CR>
 
 " (un)comment line(s)
 :map <buffer> <Leader>// :s:^://:<CR>:noh<CR>
