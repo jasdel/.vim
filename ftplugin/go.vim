@@ -1,12 +1,5 @@
 " Go specific key bindings
-
-" Go related mappings
-:nmap <Leader>i :GoInfo<CR>
-:nmap <Leader>gd :GoDef<CR>
-:nmap <Leader>r <Plug>(go-run)
-:nmap <Leader>re :GoRename<CR>
-:nmap <Leader>t :GoTest<CR>
-:nmap gd <Plug>(go-def-tab)
+"------------------------
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -17,6 +10,15 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+
+" Go related mappings
+:nmap <Leader>i :GoInfo<CR>
+:nmap <Leader>gd :GoDef<CR>
+:nmap <Leader>r <Plug>(go-run)
+:nmap <Leader>re :GoRename<CR>
+:nmap <Leader>t :GoTest<CR>
+:nmap gd <Plug>(go-def-tab)
+
 
 :nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 :nmap <leader>gc :GoCoverageToggle<CR>
