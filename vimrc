@@ -4,7 +4,7 @@ filetype off
 
 " Plugins
 "------------------
-call plug#begin("~/.config/nvim/bundle")
+call plug#begin("~/.vim/bundle")
 Plug 'kien/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
@@ -57,7 +57,7 @@ set mouse=a
 "set completeopt=menu
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-set directory=~/.vim/.swapfiles/
+set directory=~/.vim/.swapfiles//
 
 if has('nvim')
   set ttimeout
@@ -68,11 +68,11 @@ set backspace=indent,eol,start
 
 " Source Plugins
 "------------------
-source ~/.config/nvim/config/ctrlp.vim
-source ~/.config/nvim/config/vim-go.vim
-source ~/.config/nvim/config/gitgutter.vim
-source ~/.config/nvim/config/markdown.vim
-source ~/.config/nvim/config/airline.vim
+source ~/.vim/config/ctrlp.vim
+source ~/.vim/config/vim-go.vim
+source ~/.vim/config/gitgutter.vim
+source ~/.vim/config/markdown.vim
+source ~/.vim/config/airline.vim
 
 " Key bindings
 "------------------
@@ -85,6 +85,6 @@ inoremap wj <esc>
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " Load local config if exists
-if filereadable(expand("~/.nvim/config/local.vim"))
-  source ~/.nvim/config/local.vim
+if filereadable(expand("~/.vim/config/local.vim"))
+  source ~/.vim/config/local.vim
 endif
