@@ -1,85 +1,90 @@
+
+set nocompatible
+filetype off
+
+" Plugins
+"------------------
+call plug#begin("~/.config/nvim/bundle")
+Plug 'kien/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'airblade/vim-gitgutter'
+Plug 'plasticboy/vim-markdown'
+Plug 'vim-airline/vim-airline'
+"Plug 'rust-lang/rust.vim'
+call plug#end()
+
 " General
 "-------------------
-syntax enable
-filetype plugin indent on
+
+" UI
+"-------------------
+if !exists("g:vimrc_loaded")
+  if exists('+colorcolumn')
+    set colorcolumn=80
+  endif
+
+" Vim color detection
+  if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+  endif
+  let g:rehash256 = 1
+
+  colorscheme molokai
+  "let g:molokai_original = 1
+endif
+
+if has('mouse')
+  set mouse=a
+  set selectmode=mouse,key
+  set nomousehide
+endif
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
 set relativenumber
 set number
+
 set wrap linebreak
 set shiftwidth=4 tabstop=4
 let mapleader=","
 set hlsearch
 set mouse=a
 
-" Platform Specific
-"-------------------
-let s:uname = substitute(system("uname -s"), '\n', '', '')
+"" <TAB>: completion.
+"set completeopt=menu
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-"if s:uname == "Darwin"
-"  let g:tagbar_ctags_bin="$HOME/bin/ctags"
-"endif
+set directory=~/.vim/.swapfiles/
 
-" Cursor improvements
-"-------------------
-if exists('+colorcolumn')
-  set colorcolumn=80
-endif
-"set cursorline
-
-" Alt swapfile output
-"-------------------
-set directory=~/.vim/swapfiles//
-
-" Pathogen - manage runtime path
-"----------------------
-execute pathogen#infect()
-
-" Color and Themes
-"----------------------
-" Vim color detection
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
+if has('nvim')
+  set ttimeout
+  set ttimeoutlen=0
 endif
 
-let g:rehash256 = 1
-colorscheme molokai
+set backspace=indent,eol,start
 
-" auto completion
-"---------------------
-set completeopt=menu
-
-"autocmd FileType go setlocal omnifunc=go#complete#Complete
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Vim-Go config
+" Source Plugins
 "------------------
-let g:go_fmt_command = "goimports"
-let g:go_disable_autoinstall = 0
-
-" Highlight
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 0
-let g:go_highlight_interfaces = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_build_constraints = 0
-
-" Vim-markdown
-"------------------
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_math=1
-let g:vim_markdown_frontmatter=1
-
-" Vim-ctrlp
-"------------------
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_custom_ignore = {
-			\ 'dir': '\v[\/]\.(git|idea)',
-			\ 'file': '\v[\/].(DS_Store)',
- \}
-
+source ~/.config/nvim/config/ctrlp.vim
+source ~/.config/nvim/config/vim-go.vim
+source ~/.config/nvim/config/gitgutter.vim
+source ~/.config/nvim/config/markdown.vim
+source ~/.config/nvim/config/airline.vim
 
 " Key bindings
 "------------------
 nmap <F12> :set paste!<CR>
+
+" Add META(Alt)+i as escape trigger
+inoremap wj <esc>
+
+" Add alias for command in new window/buffer
+:command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+
+" Load local config if exists
+if filereadable(expand("~/.nvim/config/local.vim"))
+  source ~/.nvim/config/local.vim
+endif

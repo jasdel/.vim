@@ -1,6 +1,8 @@
 " Go specific key bindings
 "------------------------
 
+set autowrite
+
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
