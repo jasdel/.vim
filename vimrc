@@ -5,12 +5,20 @@ filetype off
 " Plugins
 "------------------
 call plug#begin("~/.vim/bundle")
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf.vim'
 "Plug 'rust-lang/rust.vim'
+"if has('nvim')
+"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"  Plug 'zchee/deoplete-go', { 'do': 'make'}
+"endif
 call plug#end()
 
 " General
@@ -34,9 +42,9 @@ if !exists("g:vimrc_loaded")
 endif
 
 if has('mouse')
-  set mouse=a
-  set selectmode=mouse,key
-  set nomousehide
+  "set mouse=a
+  "set selectmode=mouse,key
+  "set nomousehide
 endif
 
 syntax on
@@ -51,7 +59,6 @@ set wrap linebreak
 set shiftwidth=4 tabstop=4
 let mapleader=","
 set hlsearch
-set mouse=a
 
 "" <TAB>: completion.
 "set completeopt=menu
@@ -68,18 +75,20 @@ set backspace=indent,eol,start
 
 " Source Plugins
 "------------------
-source ~/.vim/config/ctrlp.vim
+"source ~/.config/nvim/config/ctrlp.vim
 source ~/.vim/config/vim-go.vim
 source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/markdown.vim
 source ~/.vim/config/airline.vim
+source ~/.vim/config/ale.vim
+source ~/.vim/config/fzf.vim
 
 " Key bindings
 "------------------
 nmap <F12> :set paste!<CR>
 
 " Add META(Alt)+i as escape trigger
-inoremap wj <esc>
+inoremap jj <esc>
 
 " Add alias for command in new window/buffer
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
