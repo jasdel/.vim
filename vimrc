@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'stevearc/vim-arduino'
 "Plug 'junegunn/fzf.vim'
 "Plug 'rust-lang/rust.vim'
 "if has('nvim')
