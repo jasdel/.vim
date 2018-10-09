@@ -87,6 +87,7 @@ source ~/.vim/config/fzf.vim
 " Key bindings
 "------------------
 nmap <F12> :set paste!<CR>
+nmap <Leader>nn :set relativenumber<CR>:set number<CR>
 
 " Add META(Alt)+i as escape trigger
 inoremap jj <esc>
@@ -98,3 +99,15 @@ inoremap jj <esc>
 if filereadable(expand("~/.vim/config/local.vim"))
   source ~/.vim/config/local.vim
 endif
+
+" Custom filetypes
+"-----------------
+autocmd BufNewFile,BufRead *.gotxttmpl set syntax=gotexttmpl
+
+" netrw modifications
+" https://shapeshed.com/vim-netrw/
+"-------------------
+" Remove Banner
+let g:netrw_banner = 0
+" Detail list view
+let g:netrw_liststyle = 3
