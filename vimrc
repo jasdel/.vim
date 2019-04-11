@@ -65,7 +65,7 @@ set hlsearch
 "set completeopt=menu
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-set directory=~/.vim/.swapfiles//
+set directory=~/.vim/.swapfiles/
 
 if has('nvim')
   set ttimeout
