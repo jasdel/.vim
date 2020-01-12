@@ -5,22 +5,29 @@ filetype off
 " Plugins
 "------------------
 call plug#begin("~/.vim/bundle")
-"Plug 'kien/ctrlp.vim'
+
+" Language Utils
 Plug 'fatih/vim-go'
-Plug 'airblade/vim-gitgutter'
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-airline/vim-airline'
+
+" Git Utilities
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
+" Linting and validation
 Plug 'w0rp/ale'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
-"Plug 'stevearc/vim-arduino'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+
+" Fuzz search - Ctrl + P
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
-"Plug 'rust-lang/rust.vim'
-"if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"  Plug 'zchee/deoplete-go', { 'do': 'make'}
-"endif
+
+" Start page
+" https://github.com/mhinz/vim-startify/wiki/Plugin-features-in-detail
+Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 " General
@@ -77,13 +84,14 @@ set backspace=indent,eol,start
 
 " Source Plugins
 "------------------
-"source ~/.config/nvim/config/ctrlp.vim
 source ~/.vim/config/vim-go.vim
-source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/markdown.vim
-source ~/.vim/config/airline.vim
+source ~/.vim/config/gitgutter.vim
+source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
-source ~/.vim/config/fzf.vim
+"source ~/.vim/config/fzf.vim
+"source ~/.config/nvim/config/ctrlp.vim
+"source ~/.vim/config/airline.vim
 
 " Key bindings
 "------------------
