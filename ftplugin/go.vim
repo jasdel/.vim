@@ -57,7 +57,10 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 :map <buffer> <Leader>// :s:^://:<CR>:noh<CR>
 :map <buffer> <Leader>?? :s:^\s*//::<CR>:noh<CR>
 
+" Template Partials
+" -----------------
 command! -nargs=0 JoTestEqual read ~/.vim/templates/go/testEqual.tmpl
 command! -nargs=0 JoTestContains read ~/.vim/templates/go/testContains.tmpl
 command! -nargs=0 JoTestNoError read ~/.vim/templates/go/testNoError.tmpl
 command! -nargs=0 JoTestTable read ~/.vim/templates/go/testTable.tmpl
+command! -nargs=0 JoTestFuncError read ~/.vim/templates/go/testFuncError.tmpl
