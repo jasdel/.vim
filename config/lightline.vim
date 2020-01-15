@@ -13,7 +13,7 @@ let g:lightline = {
     \   'right': [ [ 'lineinfo' ] ],
 	\ },
 	\ 'component_function': {
-	\   'gitbranch': 'fugitive#head',
+	\   'filename': 'LightlineFilename'
 	\ },
     \ 'mode_map': {
 	\   'n' : 'N',
@@ -29,5 +29,13 @@ let g:lightline = {
 	\   't': 'T',
 	\ },
 	\ }
+
+"	\ 'component_function': {
+"	\   'gitbranch': 'fugitive#head',
+
+" Relative filename
+function! LightlineFilename()
+  return expand('%')
+endfunction
 
 set laststatus=2

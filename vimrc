@@ -8,7 +8,6 @@ call plug#begin("~/.vim/bundle")
 
 " Language Utils
 Plug 'fatih/vim-go'
-Plug 'plasticboy/vim-markdown'
 
 " Git Utilities
 Plug 'airblade/vim-gitgutter'
@@ -18,11 +17,11 @@ Plug 'junegunn/gv.vim'
 " Linting and validation
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
+"Plug 'maximbaz/lightline-ale'
 
 " Fuzz search - Ctrl + P
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Start page
 " https://github.com/mhinz/vim-startify/wiki/Plugin-features-in-detail
@@ -85,13 +84,10 @@ set backspace=indent,eol,start
 " Source Plugins
 "------------------
 source ~/.vim/config/vim-go.vim
-source ~/.vim/config/markdown.vim
 source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
-"source ~/.vim/config/fzf.vim
-"source ~/.config/nvim/config/ctrlp.vim
-"source ~/.vim/config/airline.vim
+source ~/.vim/config/fzf.vim
 
 " Key bindings
 "------------------
@@ -120,3 +116,10 @@ autocmd BufNewFile,BufRead *.gotxttmpl set syntax=gotexttmpl
 let g:netrw_banner = 0
 " Detail list view
 let g:netrw_liststyle = 3
+
+" Enable spell checking when known filetype
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.go setlocal spell
+autocmd BufRead,BufNewFile *.java setlocal spell
+
+autocmd FileType gitcommit setlocal spell
