@@ -1,22 +1,14 @@
 " Go specific key bindings
 "------------------------
 
+set spell
+
 set autowrite
 
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
-
-" run :GoBuild or :GoTestCompile based on the go file
-"function! s:build_go_files()
-"  let l:file = expand('%')
-"  if l:file =~# '^\f\+_test\.go$'
-"    call go#cmd#Test(0, 1)
-"  elseif l:file =~# '^\f\+\.go$'
-"    call go#cmd#Build(0)
-"  endif
-"endfunction
 
 " Go related mappings
 :nmap <Leader>gi :GoInfo<CR>

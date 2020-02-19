@@ -13,6 +13,7 @@ Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-rhubarb'
 
 " Linting and validation
 Plug 'w0rp/ale'
@@ -74,11 +75,6 @@ set hlsearch
 
 set directory=~/.vim/.swapfiles/
 
-if has('nvim')
-  set ttimeout
-  set ttimeoutlen=0
-endif
-
 set backspace=indent,eol,start
 
 " Source Plugins
@@ -117,9 +113,8 @@ let g:netrw_banner = 0
 " Detail list view
 let g:netrw_liststyle = 3
 
-" Enable spell checking when known filetype
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.go setlocal spell
-autocmd BufRead,BufNewFile *.java setlocal spell
-
+" Enable spell checking when known file types
+autocmd FileType vim setlocal spell
+autocmd FileType java setlocal spell
 autocmd FileType gitcommit setlocal spell
+
