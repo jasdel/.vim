@@ -6,6 +6,9 @@ filetype off
 "------------------
 call plug#begin("~/.vim/bundle")
 
+" Color Schemes
+Plug 'NLKNguyen/papercolor-theme'
+
 " Language Utils
 Plug 'fatih/vim-go'
 
@@ -28,6 +31,9 @@ Plug 'junegunn/fzf.vim'
 " https://github.com/mhinz/vim-startify/wiki/Plugin-features-in-detail
 Plug 'mhinz/vim-startify'
 
+" Spelling
+"Plug 'kamykn/spelunker.vim'
+
 call plug#end()
 
 " General
@@ -35,34 +41,34 @@ call plug#end()
 
 " UI
 "-------------------
-if !exists("g:vimrc_loaded")
-  if exists('+colorcolumn')
+"if !exists("g:vimrc_loaded")
+  "if exists('+colorcolumn')
     set colorcolumn=80
-  endif
+  "endif
 
-" Vim color detection
-  if $COLORTERM == 'gnome-terminal'
+  " Vim color detection
+  "if $COLORTERM == 'gnome-terminal'
     set t_Co=256
-  endif
+  "endif
   let g:rehash256 = 1
 
-  colorscheme molokai
-  "let g:molokai_original = 1
-endif
+  "colorscheme molokai
 
-if has('mouse')
-  "set mouse=a
-  "set selectmode=mouse,key
-  "set nomousehide
-endif
+  set background=light
+  colorscheme PaperColor
+"endif
+
 
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
 
+" Enable line numbering
 set relativenumber
 set number
+" Enable status bar
+set laststatus=2
 
 set wrap linebreak
 set shiftwidth=4 tabstop=4
@@ -84,6 +90,9 @@ source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
+source ~/.vim/config/fzf.vim
+"source ~/.vim/config/papercolor.vim
+"source ~/.vim/config/spelunker.vim
 
 " Key bindings
 "------------------
@@ -113,8 +122,12 @@ let g:netrw_banner = 0
 " Detail list view
 let g:netrw_liststyle = 3
 
+"set nospell
 " Enable spell checking when known file types
 autocmd FileType vim setlocal spell
+autocmd FileType text setlocal spell
+autocmd FileType go setlocal spell
+autocmd FileType markdown setlocal spell
 autocmd FileType java setlocal spell
 autocmd FileType gitcommit setlocal spell
 

@@ -1,8 +1,6 @@
 " Go specific key bindings
 "------------------------
 
-set spell
-
 set autowrite
 
 au FileType go set noexpandtab
@@ -51,6 +49,7 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " Template Partials
 " -----------------
+command! -nargs=0 JoTestErrorAs read ~/.vim/templates/go/testErrorAs.tmpl
 command! -nargs=0 JoTestEqual read ~/.vim/templates/go/testEqual.tmpl
 command! -nargs=0 JoTestContains read ~/.vim/templates/go/testContains.tmpl
 command! -nargs=0 JoTestNoError read ~/.vim/templates/go/testNoError.tmpl
