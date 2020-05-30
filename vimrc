@@ -45,6 +45,7 @@ call plug#end()
 "if !exists("g:vimrc_loaded")
   "if exists('+colorcolumn')
     set colorcolumn=80
+	set cursorline
   "endif
 
   " Vim color detection
@@ -54,6 +55,19 @@ call plug#end()
   let g:rehash256 = 1
 
   "colorscheme molokai
+
+  " https://jonasjacek.github.io/colors/
+  let g:PaperColor_Theme_Options = {
+    \   'theme': {
+    \     'default.light': {
+    \       'override' : {
+    \         'color00' : ['#eeeeee', '255'],
+    \         'linenumber_fg' : ['#444444', '238'],
+    \         'linenumber_bg' : ['#eeeeee', '255'],
+    \       }
+    \     }
+    \   }
+    \ }
 
   set background=light
   colorscheme PaperColor
@@ -92,8 +106,6 @@ source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
 source ~/.vim/config/fzf.vim
-"source ~/.vim/config/papercolor.vim
-"source ~/.vim/config/spelunker.vim
 
 " Key bindings
 "------------------
