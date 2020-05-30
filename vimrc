@@ -11,6 +11,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Language Utils
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 
 " Git Utilities
 Plug 'airblade/vim-gitgutter'
@@ -98,6 +99,7 @@ source ~/.vim/config/fzf.vim
 "------------------
 nmap <F12> :set paste!<CR>
 nmap <Leader>nn :set relativenumber<CR>:set number<CR>
+nmap <Leader>q :q<CR>
 
 " Add META(Alt)+i as escape trigger
 inoremap jj <esc>
@@ -131,3 +133,8 @@ autocmd FileType markdown setlocal spell
 autocmd FileType java setlocal spell
 autocmd FileType gitcommit setlocal spell
 
+" Enable spell checking when known filetype
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.go setlocal spell
+autocmd BufRead,BufNewFile *.rs setlocal spell
+autocmd BufRead,BufNewFile *.java setlocal spell

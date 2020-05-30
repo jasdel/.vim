@@ -7,3 +7,6 @@
 /.swapfiles/*
 
 !.gitkeep
+
+autoload/plug.vim.old
+/view/*
