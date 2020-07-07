@@ -14,17 +14,31 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 
 " Git Utilities
+"---------------------
 Plug 'airblade/vim-gitgutter'
+
+" Git browsing utilities
+" https://github.com/tpope/vim-fugitive
+" :GBrowse - open in browser (Github), optional line selection
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
+" Allows opening GBrowse in GitHub
+" https://github.com/tpope/vim-rhubarb/
 Plug 'tpope/vim-rhubarb'
 
+" Git commit browser
+" https://github.com/junegunn/gv.vim
+" :GV - commit browser, optional with git log commands
+" :GV! - commit browser for current file
+Plug 'junegunn/gv.vim'
+
 " Linting and validation
+"---------------------
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 "Plug 'maximbaz/lightline-ale'
 
-" Fuzz search - Ctrl + P
+" Fuzz search and other utilities - Ctrl + P
+" https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
