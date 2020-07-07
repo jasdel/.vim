@@ -12,6 +12,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Language Utils
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
+Plug 'jasdel/vim-smithy'
 
 " Git Utilities
 "---------------------
