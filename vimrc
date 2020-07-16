@@ -120,7 +120,6 @@ source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
-source ~/.vim/config/fzf.vim
 
 " Key bindings
 "------------------
