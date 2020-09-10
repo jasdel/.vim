@@ -165,3 +165,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.go setlocal spell
 autocmd BufRead,BufNewFile *.rs setlocal spell
 autocmd BufRead,BufNewFile *.java setlocal spell
+
+" Deal with Windows + Ubuntu + vim starting in replace mode.
+" https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
+set t_u7=
