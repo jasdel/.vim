@@ -8,7 +8,9 @@ call plug#begin("~/.vim/bundle")
 
 " Color Schemes
 "Plug 'NLKNguyen/papercolor-theme'
-Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
+"Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
+"Plug 'gilgigilgil/anderson.vim'
+Plug 'cormacrelf/vim-colors-github'
 
 " Language Utils
 Plug 'fatih/vim-go'
@@ -86,9 +88,16 @@ call plug#end()
   "  \   }
   "  \ }
 
-  "set background=light
+  set background=light
   "colorscheme PaperColor
-  color paper
+  "color paper
+  
+  " if you use airline / lightline
+  let g:airline_theme = "github"
+  let g:lightline = { 'colorscheme': 'github' }
+
+  let g:github_colors_soft = 1
+  colorscheme github
 "endif
 
 
@@ -170,8 +179,8 @@ autocmd BufRead,BufNewFile *.java setlocal spell
 
 " Deal with Windows + Ubuntu + vim starting in replace mode.
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
-set t_u7=
+"set t_u7=
 
 " gvim options
-set linespace=3
-set guifont=Menlo-Regular:h16
+"set linespace=3
+"set guifont=Menlo-Regular:h16
