@@ -4,3 +4,7 @@ let g:ale_sign_warning = '⚠'
 
 " Enable integration with airline.
 "let g:airline#extensions#ale#enabled = 1
+
+let g:ale_linters = {
+	\ 'go': ['gopls'],
+	\}

@@ -7,7 +7,8 @@ filetype off
 call plug#begin("~/.vim/bundle")
 
 " Color Schemes
-Plug 'NLKNguyen/papercolor-theme'
+"Plug 'NLKNguyen/papercolor-theme'
+Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 
 " Language Utils
 Plug 'fatih/vim-go'
@@ -61,7 +62,7 @@ call plug#end()
 "if !exists("g:vimrc_loaded")
   "if exists('+colorcolumn')
     set colorcolumn=80
-	set cursorline
+   "set cursorline
   "endif
 
   " Vim color detection
@@ -73,20 +74,21 @@ call plug#end()
   "colorscheme molokai
 
   " https://jonasjacek.github.io/colors/
-  let g:PaperColor_Theme_Options = {
-    \   'theme': {
-    \     'default.light': {
-    \       'override' : {
-    \         'color00' : ['#eeeeee', '255'],
-    \         'linenumber_fg' : ['#444444', '238'],
-    \         'linenumber_bg' : ['#eeeeee', '255'],
-    \       }
-    \     }
-    \   }
-    \ }
+  "let g:PaperColor_Theme_Options = {
+  "  \   'theme': {
+  "  \     'default.light': {
+  "  \       'override' : {
+  "  \         'color00' : ['#eeeeee', '255'],
+  "  \         'linenumber_fg' : ['#444444', '238'],
+  "  \         'linenumber_bg' : ['#eeeeee', '255'],
+  "  \       }
+  "  \     }
+  "  \   }
+  "  \ }
 
-  set background=light
-  colorscheme PaperColor
+  "set background=light
+  "colorscheme PaperColor
+  color paper
 "endif
 
 
@@ -169,3 +171,7 @@ autocmd BufRead,BufNewFile *.java setlocal spell
 " Deal with Windows + Ubuntu + vim starting in replace mode.
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
 set t_u7=
+
+" gvim options
+set linespace=3
+set guifont=Menlo-Regular:h16

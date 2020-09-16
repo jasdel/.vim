@@ -23,3 +23,7 @@ let g:go_highlight_types = 1
 
 " Code Folding
 let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
