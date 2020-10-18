@@ -17,6 +17,7 @@ Plug 'fatih/vim-go'
 Plug 'jasdel/vim-go-scratchpad'
 Plug 'rust-lang/rust.vim'
 Plug 'jasdel/vim-smithy'
+Plug 'udalov/kotlin-vim'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
