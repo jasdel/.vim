@@ -18,6 +18,12 @@ Plug 'jasdel/vim-go-scratchpad'
 Plug 'rust-lang/rust.vim'
 Plug 'jasdel/vim-smithy'
 
+" Markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
+"let g:pencil#textwidth = 74
+
 " Git Utilities
 "---------------------
 Plug 'airblade/vim-gitgutter'
@@ -167,19 +173,19 @@ let g:netrw_liststyle = 3
 autocmd FileType vim setlocal spell
 autocmd FileType text setlocal spell
 autocmd FileType go setlocal spell
-autocmd FileType markdown setlocal spell
+"autocmd FileType markdown setlocal spell
 autocmd FileType java setlocal spell
 autocmd FileType gitcommit setlocal spell
 
 " Enable spell checking when known filetype
-autocmd BufRead,BufNewFile *.md setlocal spell
+"autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.go setlocal spell
 autocmd BufRead,BufNewFile *.rs setlocal spell
 autocmd BufRead,BufNewFile *.java setlocal spell
 
 " Deal with Windows + Ubuntu + vim starting in replace mode.
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
-"set t_u7=
+set t_u7=
 
 " gvim options
 "set linespace=3

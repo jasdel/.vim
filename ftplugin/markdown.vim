@@ -5,3 +5,10 @@
 
 "let g:markdown_fenced_languages = ['python', 'go']
 "syntax spell default
+
+set tabstop=4 shiftwidth=4 expandtab
+
+let g:vim_markdown_folding_disabled = 1
+
+Pencil
+PencilSoft
