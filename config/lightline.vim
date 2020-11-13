@@ -1,7 +1,6 @@
 set noshowmode
 
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
 	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -9,13 +8,13 @@ let g:lightline = {
 	\              [ 'fileformat', 'fileencoding', 'filetype' ] ],
 	\ },
 	\ 'inactive': {
-    \   'left': [ [ 'filename' ] ],
-    \   'right': [ [ 'lineinfo' ] ],
+  \   'left': [ [ 'filename' ] ],
+  \   'right': [ [ 'lineinfo' ] ],
 	\ },
 	\ 'component_function': {
 	\   'filename': 'LightlineFilename'
 	\ },
-    \ 'mode_map': {
+  \ 'mode_map': {
 	\   'n' : 'N',
 	\   'i' : 'I',
 	\   'R' : 'R',

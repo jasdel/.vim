@@ -11,6 +11,7 @@ call plug#begin("~/.vim/bundle")
 "Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 "Plug 'gilgigilgil/anderson.vim'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'lucasprag/simpleblack'
 
 " Language Utils
 Plug 'fatih/vim-go'
@@ -60,6 +61,7 @@ Plug 'mhinz/vim-startify'
 
 " Spelling
 "Plug 'kamykn/spelunker.vim'
+"Plug 'iamcco/coc-spell-checker'
 
 call plug#end()
 
@@ -68,19 +70,18 @@ call plug#end()
 
 " UI
 "-------------------
-"if !exists("g:vimrc_loaded")
-  "if exists('+colorcolumn')
+if !exists("g:vimrc_loaded")
+  if exists('+colorcolumn')
     set colorcolumn=80
-   "set cursorline
-  "endif
+   set cursorline
+  endif
 
   " Vim color detection
-  "if $COLORTERM == 'gnome-terminal'
+  " https://stackoverflow.com/questions/15375992/
+  if $COLORTERM == "screen"
     set t_Co=256
-  "endif
-  let g:rehash256 = 1
+  endif
 
-  "colorscheme molokai
 
   " https://jonasjacek.github.io/colors/
   "let g:PaperColor_Theme_Options = {
@@ -95,17 +96,24 @@ call plug#end()
   "  \   }
   "  \ }
 
-  set background=light
-  "colorscheme PaperColor
+  "set background=light
+  "color PaperColor
   "color paper
+  "color molokai
   
   " if you use airline / lightline
-  let g:airline_theme = "github"
-  let g:lightline = { 'colorscheme': 'github' }
+  "set background=light
+  "let g:github_colors_soft = 1
+  "color github
 
-  let g:github_colors_soft = 1
-  colorscheme github
-"endif
+  if $ITERM_PROFILE == "Light"
+  	set background=light
+  	color github
+  else
+    colorscheme simpleblack
+  endif
+
+endif
 
 
 syntax on
@@ -116,6 +124,17 @@ filetype indent on
 " Enable line numbering
 set relativenumber
 set number
+
+if $ITERM_PROFILE == "Light"
+    hi LineNr ctermfg=black
+    hi CursorLineNr ctermfg=blue
+else
+    hi LineNr ctermfg=grey
+    hi CursorLineNr ctermfg=yellow
+endif
+
+
+
 " Enable status bar
 set laststatus=2
 
@@ -139,18 +158,19 @@ source ~/.vim/config/gitgutter.vim
 source ~/.vim/config/lightline.vim
 source ~/.vim/config/ale.vim
 source ~/.vim/config/fzf.vim
+"source ~/.vim/config/spelunker.vim
 
 " Key bindings
 "------------------
 nmap <F12> :set paste!<CR>
 nmap <Leader>nn :set relativenumber<CR>:set number<CR>
-nmap <Leader>q :q<CR>
+"nmap <Leader>q :q<CR>
 
 " Add META(Alt)+i as escape trigger
 inoremap jj <esc>
 
 " Add alias for command in new window/buffer
-:command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+":command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
@@ -171,23 +191,23 @@ let g:netrw_liststyle = 3
 
 "set nospell
 " Enable spell checking when known file types
-autocmd FileType vim setlocal spell
-autocmd FileType text setlocal spell
-autocmd FileType go setlocal spell
-"autocmd FileType markdown setlocal spell
-autocmd FileType java setlocal spell
-autocmd FileType gitcommit setlocal spell
+autocmd FileType vim setlocal spell spelllang=en_us
+autocmd FileType text setlocal spell spelllang=en_us
+autocmd FileType go setlocal spell spelllang=en_us
+autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType java setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 " Enable spell checking when known filetype
 "autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.go setlocal spell
-autocmd BufRead,BufNewFile *.rs setlocal spell
-autocmd BufRead,BufNewFile *.java setlocal spell
+"autocmd BufRead,BufNewFile *.go setlocal spell
+"autocmd BufRead,BufNewFile *.rs setlocal spell
+"autocmd BufRead,BufNewFile *.java setlocal spell
 
 " Deal with Windows + Ubuntu + vim starting in replace mode.
 " https://superuser.com/questions/1284561/why-is-vim-starting-in-replace-mode
-set t_u7=
+"set t_u7=
 
 " gvim options
-"set linespace=3
-"set guifont=Menlo-Regular:h16
+set linespace=3
+set guifont=Menlo-Regular:h16
