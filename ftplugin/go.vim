@@ -63,5 +63,5 @@ command! -nargs=0 JoTestExpectError read ~/.vim/templates/go/testExpectError.tmp
 command! -nargs=0 JoClientWithV2SDK read ~/.vim/templates/go/clientWithV2SDK.tmpl
 
 " Enable auto completion
-setlocal omnifunc=go#complete#Complete
+"setlocal omnifunc=go#complete#Complete
 

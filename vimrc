@@ -6,6 +6,15 @@ filetype off
 "------------------
 call plug#begin("~/.vim/bundle")
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " Color Schemes
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
@@ -16,6 +25,7 @@ Plug 'lucasprag/simpleblack'
 " Language Utils
 Plug 'fatih/vim-go'
 Plug 'jasdel/vim-go-scratchpad'
+" rustup component add rls rust-analysis rust-src
 Plug 'rust-lang/rust.vim'
 Plug 'jasdel/vim-smithy'
 Plug 'udalov/kotlin-vim'
@@ -42,11 +52,11 @@ Plug 'tpope/vim-rhubarb'
 " https://github.com/junegunn/gv.vim
 " :GV - commit browser, optional with git log commands
 " :GV! - commit browser for current file
-Plug 'junegunn/gv.vim'
+"Plug 'junegunn/gv.vim'
 
 " Linting and validation
 "---------------------
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 "Plug 'maximbaz/lightline-ale'
 
@@ -132,7 +142,6 @@ else
     hi LineNr ctermfg=grey
     hi CursorLineNr ctermfg=yellow
 endif
-
 
 
 " Enable status bar
