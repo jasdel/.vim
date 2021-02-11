@@ -9,6 +9,7 @@ call plug#begin("~/.vim/bundle")
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
+  " https://github.com/Shougo/deoplete.nvim
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
