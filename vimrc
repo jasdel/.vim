@@ -31,6 +31,21 @@ Plug 'rust-lang/rust.vim'
 Plug 'jasdel/vim-smithy'
 Plug 'udalov/kotlin-vim'
 
+" code completion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+"let g:go_test_show_name = 1
+filetype plugin on
+"set omnifunc=syntaxcomplete#Complete
+"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
 " Markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
@@ -55,9 +70,16 @@ Plug 'tpope/vim-rhubarb'
 " :GV! - commit browser for current file
 "Plug 'junegunn/gv.vim'
 
+" cli utilities
+" https://github.com/wsdjeg/vim-fetch
+Plug 'wsdjeg/vim-fetch'
+
 " Linting and validation
 "---------------------
+"Plug 'w0rp/ale'
 Plug 'dense-analysis/ale'
+"let g:ale_completion_enabled=1
+
 Plug 'itchyny/lightline.vim'
 "Plug 'maximbaz/lightline-ale'
 

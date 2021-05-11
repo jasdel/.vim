@@ -64,4 +64,3 @@ command! -nargs=0 JoClientWithV2SDK read ~/.vim/templates/go/clientWithV2SDK.tmp
 
 " Enable auto completion
 "setlocal omnifunc=go#complete#Complete
-
