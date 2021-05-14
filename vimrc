@@ -2,6 +2,9 @@
 set nocompatible
 filetype off
 
+#set pyxversion=3
+set encoding=utf-8
+
 " Plugins
 "------------------
 call plug#begin("~/.vim/bundle")
@@ -30,6 +33,7 @@ Plug 'jasdel/vim-go-scratchpad'
 Plug 'rust-lang/rust.vim'
 Plug 'jasdel/vim-smithy'
 Plug 'udalov/kotlin-vim'
+Plug 'lepture/vim-jinja'
 
 " code completion
 if has('nvim')
