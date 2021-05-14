@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-#set pyxversion=3
+"set pyxversion=3
 set encoding=utf-8
 
 " Plugins
